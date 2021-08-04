@@ -61,7 +61,7 @@ print("autotrade start")
 # 필요변수
 coin_name = "KRW-CHZ"
 coin = "CHZ"
-k = 0.2
+k = 0.15
 seed = 2500000
 split = 100
 unit_price = 25000
