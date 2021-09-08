@@ -61,10 +61,10 @@ print("autotrade start")
 # 필요변수
 coin_name = "KRW-ETH"
 coin = "ETH"
-k = 0.07
+k = 0.15
 seed = 5000000
-split = 100
-unit_price = 50000
+split = 360
+unit_price = 20000
 balance = 0
 avg_buy_price = 0
 time_change = 0
