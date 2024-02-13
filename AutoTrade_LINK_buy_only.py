@@ -82,13 +82,13 @@ while True:
             avg_buy_price = get_avg_buy_price(coin)
             balance = get_balance(coin)   
             current_price = get_current_price(coin_name)
-            df = pyupbit.get_ohlcv(coin_name, interval="minute5", count=2)
+            df = pyupbit.get_ohlcv(coin_name, interval="minute240", count=2)
             increase_rate = (df.iloc[0]['close'] - df.iloc[0]['open']) / df.iloc[0]['open']
             if avg_buy_price == 0:
                 if input_qty != 0:
                     input_qty = 0
                   
-            if (time_change == 0) | (time_change == pyupbit.get_ohlcv(coin_name, interval="minute5", count=2).index[0]):   
+            if (time_change == 0) | (time_change == pyupbit.get_ohlcv(coin_name, interval="minute240", count=2).index[0]):   
                 if input_qty < split:
                     if increase_rate < k:
                         if increase_rate < (-1*k):
@@ -98,7 +98,7 @@ while True:
                             upbit.buy_market_order(coin_name, unit_price)
                             input_qty += 1   
                     
-                time_change = pyupbit.get_ohlcv(coin_name, interval="minute5", count=2).index[1]
+                time_change = pyupbit.get_ohlcv(coin_name, interval="minute240", count=2).index[1]
                 
         time.sleep(1)
     
